@@ -25,6 +25,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
+        
         <li>
           <%= link_to "New Tweet", new_tweet_path %>
         </li>
@@ -34,6 +35,10 @@
           </li>
           <li>
             <%= link_to "Sign in", new_user_session_path %>
+          </li>
+        <%else %>
+          <li>
+            <%= link_to "News Feed", tweets_path %>
           </li>
         <% end %>
           <li>
