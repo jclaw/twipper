@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122204710) do
+ActiveRecord::Schema.define(version: 20141123163352) do
+
+  create_table "profiles", force: true do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.string   "pic"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "tweets", force: true do |t|
     t.string   "tweet"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "pic"
   end
 
   add_index "tweets", ["user_id"], name: "index_tweets_on_user_id"
